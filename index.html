@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en" style=" background-color:#F7F7F7 ;">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="css/vant.css">
+	<link rel="stylesheet" href="css/element.css">
+	<style>
+		@import url(css/reset1.css);
+		@import url(css/text.css);
+
+		.foryzm .el-input__inner {
+			border-color: #f56c6c;
+		}
+
+		.regi_form_input .el-input__inner {
+			padding-left: 40px;
+			background: #eef2f6;
+			height: 40px;
+		}
+
+		.leinput .el-input__inner {
+			height: 40px;
+			background: #eef2f6;
+		}
+	</style>
+	<style scoped>
+		input::-moz-input-placeholder {
+			color: #bdcade;
+		}
+
+		.hengtiao {
+			text-align: center;
+			color: #fff;
+			position: absolute;
+			bottom: 31%;
+			left: 35%;
+			background: url("../../static/img/jbsquare.png") no-repeat;
+			background-size: 100% 100%;
+			width: 60%;
+			height: 80px;
+		}
+
+		.hengtiao p {
+			padding-top: 1%;
+			font-weight: bold;
+			font-size: 28px;
+			line-height: 35px;
+		}
+
+		.hengtiao span {
+			letter-spacing: 2px;
+			display: inline-block;
+			padding-top: 1%;
+			font-size: 16px;
+		}
+
+		.diannao {
+			width: 200px;
+			height: 250px;
+			background: url("../../static/img/square.jpg") no-repeat;
+			background-size: 100% 100%;
+			display: inline-block;
+		}
+
+		/*左侧圆圈*/
+
+		.logbackrouD {
+			width: 100%;
+			min-height: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			margin-top: -61px;
+		}
+
+		.logbackrou {
+			width: 100%;
+			min-height: 100%;
+			height: 100%;
+			z-index: -10;
+			overflow: hidden;
+			position: relative;
+			top: 0px;
+			overflow: hidden;
+		}
+
+		.logbackrouz {
+			width: 800px;
+			height: 800px;
+			position: absolute;
+			top: 50%;
+			right: 46%;
+			margin-top: -380px;
+		}
+
+		/*首页文字*/
+
+		.logbacktext {
+			width: 160px;
+			letter-spacing: 1px;
+			line-height: 35px;
+			font-size: 22px;
+			font-family: '微软雅黑';
+			color: #fff;
+			z-index: -1;
+			position: absolute;
+			top: 375px;
+			left: 373px;
+		}
+
+		.logbackrouimg1 {
+			width: 487px;
+			z-index: 1;
+			position: absolute;
+			top: 153px;
+			left: 175px;
+			animation: logpageani 50s linear infinite;
+			transform-origin: 54.5% 50%;
+		}
+
+		.logbackrouimg2 {
+			width: 1065px;
+			position: relative;
+			top: -120px;
+			left: -100px;
+			animation: logpageani 50s linear infinite;
+		}
+
+		@keyframes logpageani {
+			from {
+				transform: rotate(0deg);
+			}
+
+			to {
+				transform: rotate(360deg);
+			}
+		}
+
+		/*背景*/
+
+		.logback {
+			width: 100%;
+			min-height: 100%;
+			height: 100%;
+			overflow: hidden;
+			position: absolute;
+			top: 61px;
+			z-index: -200;
+			margin-top: -61px;
+			font-size: 0;
+		}
+
+		.logback img {
+			width: 100%;
+			height: 100%;
+		}
+
+		.logback .imgfir {
+			display: inline-block;
+			width: 100%;
+			height: 33.3%;
+		}
+
+		.logback .imgfou {
+			float: right;
+			width: 100%;
+			height: 100%;
+		}
+
+		.content {
+			width: 100%;
+			height: 100%;
+			min-height: 100%;
+			position: absolute;
+			right: 0%;
+			overflow: hidden;
+		}
+
+		.content_wrapper {
+			z-index: 0;
+			width: 100%;
+			position: relative;
+			top: 70%;
+			margin-top: -310px;
+		}
+
+		.login_container {
+			margin: 0 auto;
+			width: 350px;
+			height: 310px !important;
+			border: 1px solid #a0b1c4;
+			background-color: #e9efec;
+			overflow: hidden;
+			position: relative;
+			z-index: 120;
+			padding: 0;
+			-moz-box-shadow: 0px 22px 13px -16px #75808a;
+			-webkit-box-shadow: 0px 22px 13px -16px #75808a;
+			box-shadow: 0px 22px 13px -16px #75808a;
+			border-radius: 10px;
+		}
+
+		.login_containerclone {
+			height: 388px !important;
+		}
+
+		.login_btn {
+			display: none;
+		}
+
+		/*机器人手*/
+
+		.robotleg {
+			overflow: hidden;
+			z-index: -20;
+			margin-top: -58px;
+		}
+
+		/*登录框*/
+
+		.login_u {
+			position: absolute;
+			top: 0px;
+			right: 0;
+			width: 350px;
+		}
+
+		.login_t {
+			width: 70%;
+			height: 25px;
+			line-height: 25px;
+			font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+			position: relative;
+			vertical-align: middle;
+			padding-top: 15px;
+			margin: 0 auto;
+		}
+
+		.login_t img {
+			vertical-align: middle;
+		}
+
+		.login_t span {
+			color: #4c6d9e;
+			font-size: 18px;
+			display: inline-block;
+		}
+
+		.login_t span:nth-child(2) {
+			color: #ccc;
+			font-size: 14px;
+			padding-left: 5px;
+		}
+
+		.userInput {
+			width: 72%;
+			margin: 25px auto 0;
+		}
+
+		.userInput .title {
+			text-align: center;
+			font-size: 20px;
+		}
+
+		.error {
+			font-size: 12px;
+			color: #d31723;
+			visibility: hidden;
+			display: block;
+			padding: 0 0 5px 17px;
+			line-height: 16px;
+			height: 16px;
+			text-align: left;
+			background: url("../../static/img/icon.png") 0 -100px no-repeat;
+		}
+
+		.error-tips span {
+			line-height: 18px;
+			margin-top: 5px;
+		}
+
+		.error-show {
+			visibility: visible;
+			height: auto;
+		}
+
+		.regi_form_input {
+			height: 42px;
+		}
+
+		.regi_form_input .icon {
+			display: inline-block;
+			z-index: 100;
+			position: relative;
+			left: 1px;
+			width: 25px;
+			height: 29px;
+			padding: 5px 0 3px 0;
+		}
+
+		.regi_form_input .IconPeople {
+			background-position: 11px 10px;
+			padding: 4px 12px 5px 0px;
+			background: url(../../static/img/zhanghao.png) no-repeat 10px 12px;
+		}
+
+		.regi_form_input .IconPwd {
+			background-position: -191px 8px;
+			z-index: 100;
+			padding: 4px 12px 5px 0px;
+			background: url(../../static/img/mima.png) no-repeat 10px 12px;
+		}
+
+		.el-input {
+			position: relative;
+			top: -36px;
+			background: none;
+		}
+
+		.low_login {
+			display: inline-block;
+			position: relative;
+			left: 27px;
+			top: -15px;
+		}
+
+		.low_login>div {
+			position: relative;
+			top: 0px;
+		}
+
+		.leinput {
+			top: 0px;
+			left: 1px;
+			width: 115px;
+			height: 30px;
+		}
+
+		.el-checkbox__inner::after {
+			box-sizing: content-box;
+			content: "";
+			border: 1px solid #fff;
+			border-left: 0;
+			border-top: 0;
+			height: 8px;
+			left: 4.5px;
+			position: absolute;
+			top: 1px;
+			width: 4px;
+		}
+
+		.el-checkbox__inner {
+			border: 1px solid #999;
+			width: 16px;
+			height: 16px;
+		}
+
+		.login-wrap {
+			width: 72%;
+			margin: 10px auto 20px;
+		}
+
+		.login-wrap a {
+			border-radius: 5px;
+		}
+
+		.el-button.loginBtn {
+			width: 100%;
+			height: 100%;
+			font-size: 16px;
+			padding: 0;
+			position: relative;
+			/*top: 18px;*/
+			background-color: #0885bd;
+			color: #fff;
+		}
+
+		.el-button.loginBtn:hover {
+			background-color: #3d6196;
+			color: #fff;
+		}
+
+		.btn-login {
+			display: block;
+			height: 38px;
+			font-size: 18px;
+			font-family: 微软雅黑;
+			text-align: center;
+		}
+
+		.findpwd {
+			width: 64%;
+			text-align: center;
+			margin: -10px auto 0;
+		}
+
+		.findpwd a {
+			color: #225592;
+			font-size: 12px;
+			float: right;
+		}
+
+		.findpwd a:hover {
+			text-decoration: underline;
+		}
+
+		.dotted {
+			color: #bfbfbf;
+			margin: 0 5px;
+		}
+
+		/*公告栏*/
+
+		.login_pictures {
+			position: relative;
+			right: 520px;
+			top: 50px;
+		}
+
+		.login_pictures_picture {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			height: 500px;
+			_width: 100%;
+			background-size: 400px;
+			background-repeat: no-repeat;
+			background-position: right center;
+		}
+
+		.login_pictures_txt {
+			padding-top: 25px;
+			position: relative;
+			top: 40px;
+			left: 575px;
+			font-size: 14px;
+			font-weight: normal;
+			line-height: 24px;
+		}
+
+		.login_pictures_txt p {
+			font-family: "lucida Grande", Verdana, "Microsoft YaHei";
+		}
+
+		.login_pictures_title {
+			line-height: 26px;
+			margin-top: 15px;
+			margin-bottom: 15px;
+			font-size: 27px;
+			font-weight: normal;
+			color: #6f95c8;
+		}
+
+		.login_text {
+			width: 240px;
+			height: 135px;
+			color: #fff;
+			font-size: 15px;
+			letter-spacing: 1px;
+			text-shadow: 1px 1px 0 #888;
+			font-family: 微软雅黑;
+			margin-top: 55px;
+			margin-left: 28px;
+			background-color: #b3cff8;
+			overflow: auto;
+		}
+
+		/*忘了密码*/
+
+		.forgetPwd {
+			font-size: 16px;
+			color: #00b3ff;
+		}
+
+		.forgetPwd:hover {
+			text-decoration: underline;
+		}
+
+		.el_input_error {
+			color: #f56c6c;
+			font-size: 8px;
+			line-height: 1;
+			position: absolute;
+			top: 30px;
+			left: 0;
+		}
+	</style>
+</head>
+<script src="js/axios.min.js"></script>
+<script src="js/rem.js"></script>
+<script src="js/vue.js" type="text/javascript"></script>
+<script src="js/vant.min.js" type="text/javascript"></script>
+<script src="js/util.js"></script>
+<script src="js/element.js"></script>
+<script src="js/url.js"></script>
+
+
+<body>
+	<div id="app" class="logback">
+		<!-- 头部组件 -->
+		<div>
+			<!-- 头部组件 -->
+
+			<div style="overflow: hidden;">
+
+			</div>
+
+			<div class="logback" style="background-color:#000;">
+				<div style="width:100%;height:100%;float: right;">
+					<div class="content">
+
+						<div class="content_wrapper">
+
+							<div class="login_container" id="login" style="overflow: hidden;">
+
+								<!-- 登录框 -->
+								<div class="login_u">
+									<div class="login_t">
+										<span style="display:inline-block;color:#063e95;">用户登录</span>
+
+									</div>
+
+									<!-- 需要绑定头像 -->
+									<!-- 账号密码输入框 -->
+
+									<div class="userInput">
+
+										<div class="error-tips">
+										</div>
+										<ul>
+											<li class="regi_form_input">
+												<i class="icon">
+													<img src="img/user.png" style="width: 30px;height: 30px;">
+												</i>
+												<el-input type="text" v-model="userName" placeholder="输入您的账号">
+												</el-input>
+											</li>
+											<li class="regi_form_input" style="margin-top:10px;">
+												<i class="icon">
+													<img src="img/passWord.png" style="width: 30px;height: 30px;">
+												</i>
+												<el-input type="password" v-model="passWord" placeholder="输入密码">
+												</el-input>
+											</li>
+											<li style="margin-top:10px;">
+											</li>
+
+											<div>
+												<img :src="VCodeUrl" @click="changeVCode()"
+													style="width: 100px;height: 40px;">
+												<el-input type="text" style="width: 130px; top: -15px; left: 20px;" v-model="vCode"
+													placeholder="输入验证码">
+												</el-input>
+											</div>
+											<li style="margin-top:10px;">
+											</li>
+
+										</ul>
+									</div>
+
+									<div class="login-wrap btn-login">
+										<el-button class="loginBtn" @click="login()" type="primary" tabindex="4" plain>登
+											录
+										</el-button>
+										<div style="margin: 15px 0 0 0; text-align: right; font-style: oblique;">
+										<a href="createuser.html"><span style="font-size: small; color: rgb(85, 152, 240);">点我注册新用户>>>></span></a>
+									</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+					<div class="imgfou"><img src="img/zdgb.jpg" alt=""></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</body>
+<script>
+	var app = new Vue({
+		el: '#app',
+		data: {
+			loginUrl: window.surla+'userright/userlogin',
+			userName: null,
+			passWord: null,
+			vCode: null,
+			VCodeUrl: window.surla+'Kaptcha'
+		},
+		created() {
+			this.$nextTick(() => {
+				console.log(window.surla)
+			})
+		},
+		methods: {
+			login() {
+				var _this=this;
+				if (this.userName && this.passWord) {
+					axios({
+						method: 'post',
+						url: this.loginUrl,
+						responseType: 'json',
+						params: {
+							userName: this.userName,
+							passWord: this.passWord,
+							token: '123'
+						},
+					}).then(response => {
+						var res = response.data;
+						if (res.status == '0') {
+							
+						} else {
+							this.$notify({ type: 'warning', message: res.msg, duration: 2500 });
+						}
+					}).catch(function (error) {
+						_this.$alert('服务断开：' + error, '失败提示', {
+							confirmButtonText: '确定',
+							callback: action => {
+							}
+						});
+					});
+				} else {
+					this.$notify({ type: 'warning', message: '账号或密码不能为空！', duration: 2500 });
+				}
+
+			},
+			changeVCode() {
+				this.VCodeUrl = window.surla+"Kaptcha?" + new Date().getTime();
+			},
+		}
+	})
+</script>
+
+</html>
