@@ -541,7 +541,7 @@
 												<i class="icon">
 													<img src="img/passWord.png" style="width: 30px;height: 30px;">
 												</i>
-												<el-input type="password" v-model="passWord" placeholder="输入密码">
+												<el-input show-password=true type="password" v-model="passWord" placeholder="输入密码">
 												</el-input>
 											</li>
 											<li style="margin-top:10px;">
@@ -598,7 +598,7 @@
 		methods: {
 			login() {
 				var _this=this;
-				if (this.userName && this.passWord) {
+				if (this.userName && this.passWord && this.vCode) {
 					axios({
 						method: 'post',
 						url: this.loginUrl,
@@ -615,6 +615,9 @@
 						} else {
 							this.$notify({ type: 'warning', message: res.msg, duration: 2500 });
 						}
+						this.changeVCode();
+						this.passWord=null;
+						this.vCode=null;
 					}).catch(function (error) {
 						_this.$alert('服务断开：' + error, '失败提示', {
 							confirmButtonText: '确定',
@@ -623,7 +626,7 @@
 						});
 					});
 				} else {
-					this.$notify({ type: 'warning', message: '账号或密码不能为空！', duration: 2500 });
+					this.$notify({ type: 'warning', message: '账号、密码、验证码不能为空！', duration: 2500 });
 				}
 
 			},
